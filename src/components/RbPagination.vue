@@ -1,5 +1,5 @@
 <template>
-    <div :class="{busy}" class="d-flex rb-pagination" v-click-outside="onClickOutside">
+    <div :class="{busy}" class="d-flex rb-pagination" >
         <rb-icon :class="{disabled: currPage === 1}"
                  @click="changePage(-1)"
                  icon="icon-chevron-left"/>

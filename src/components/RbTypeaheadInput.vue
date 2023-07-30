@@ -1,5 +1,5 @@
 <template>
-  <div class="rb-typeahead-input" v-click-outside="onClickOutside">
+  <div class="rb-typeahead-input" >
     <div class="rb-typeahead-inner">
       <b-input-group>
         <b-input
@@ -22,7 +22,7 @@
             <slot name="append" :val="selectedOption"/>
           </template>
       </b-input-group>
-      
+
       <b-dropdown
         ref="dropdown"
         class="rb-typeahead-dropdown"

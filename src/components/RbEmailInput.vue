@@ -1,6 +1,5 @@
 <template>
     <div
-        v-click-outside="clickOutSide"
         @click="inputFocused"
         :class="[cls, 'rb-email-input']">
         <p v-show="!isFocus"

@@ -1,6 +1,5 @@
 <template>
     <div :class="[cls, disabled || isReadonly ? 'no-edit' : '']" class="rb-tag-input"
-         v-click-outside="clickOutSide"
          @click="inputFocused">
         <div class="selected-items">
             <b-badge v-if="isReadonly && !selectedItems.length" class="rb-tag default-text" variant="light">

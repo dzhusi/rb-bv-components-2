@@ -2,7 +2,6 @@
     <div class="rb-multi-phone-input">
         <rb-input-with-button class="contact-phone-form-input"
                               v-model="innerValueComputed"
-                              v-mask="mask"
                               type="text"
                               :placeholder="placeholder"
                               @buttonClicked="remove">
@@ -11,14 +10,12 @@
 </template>
 
 <script>
-    import {mask} from 'vue-the-mask'
     import RbInputWithButton from "./RbInputWithButton";
     import {tbv} from "@/i18n";
 
     export default {
         name: 'RbMultiPhoneInput',
         components: {RbInputWithButton},
-        directives: {mask},
         props: {
             // Массив может хранить номера телефонов либо объекты содержащие номер телефона,
             // зависит от того, задано поле phoneNumberField или нет

@@ -1,6 +1,5 @@
 <template>
-    <div :class="cls" class="rb-tag-multi-select-input"
-         v-click-outside="clickOutSide">
+    <div :class="cls" class="rb-tag-multi-select-input">
 
         <b-input :disabled="disabled || isMaxLength"
                  :placeholder="placeholder"

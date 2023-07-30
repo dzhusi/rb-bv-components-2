@@ -1,5 +1,5 @@
 <template>
-  <b-input-group :class="cls" class="rb-multi-lang-input" v-click-outside="resetDropdown">
+  <b-input-group :class="cls" class="rb-multi-lang-input">
     <b-form-input
       v-model="value[compileLang(fieldName, suffix, selected)]"
       :required="selected === 'ru'"

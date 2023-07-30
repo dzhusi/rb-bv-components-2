@@ -7,13 +7,11 @@
         :resolve-value="inputValue"
         autocomplete="off"
         @input="inputChange"
-        v-mask="mask"
         :size="size"
         :placeholder="placeholder"
         :disabled="disabled"
         :state="state"
         @click="clearInput"
-        v-click-outside="setValue"
       />
       <b-input-group-append>
         <b-form-datepicker
@@ -44,13 +42,10 @@
 </template>
 
 <script>
-import { dateFormat } from 'vue-filter-date-format';
-import { mask } from 'vue-the-mask';
 import { UtDate } from '../utils/UtDate';
 
 export default {
   name: 'RbDatePickerInput',
-  directives: { mask },
   props: {
     value: { String, Date },
     placeholder: { type: String, default: 'ДД.ММ.ГГГГ' },
@@ -102,7 +97,7 @@ export default {
         return this.$emit('input', null);
       }
       let dt = this.strToDate(v);
-      this.inputValue = dateFormat(dt, this.inputPattern);
+      this.inputValue ='';
       this.$emit('input', UtDate.toIsoString(dt));
     },
     inputChange(v) {
@@ -111,7 +106,7 @@ export default {
         this.$emit('input', null);
       } else if (date) {
         if (v.length === this.mask.length && date) {
-          this.datePickerValue = dateFormat(date, this.pickerPattern);
+          this.datePickerValue = '';
           this.$emit('input', UtDate.toIsoString(date));
         }
       }
@@ -119,8 +114,8 @@ export default {
     onPropValueChange() {
       if (this.value) {
         const dt = new Date(this.value);
-        this.inputValue = dateFormat(dt, this.inputPattern);
-        this.datePickerValue = dateFormat(dt, this.pickerPattern);
+        this.inputValue = '';
+        this.datePickerValue = '';
       } else {
         this.inputValue = null;
         this.datePickerValue = null;

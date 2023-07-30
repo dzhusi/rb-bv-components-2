@@ -1,6 +1,5 @@
 <template>
     <b-input type="text"
-             v-mask="mask"
              v-model="innerValueComputed"
              :masked="false"
              :placeholder="placeholder"
@@ -11,11 +10,9 @@
 
 <script>
     import {debounce} from 'debounce';
-    import {mask} from 'vue-the-mask';
 
     export default {
         name: 'RbPhoneInput',
-        directives: {mask},
         props: {
             placeholder: {type: String, default: ''},
             mask: {type: String, default: '+# ### ### ####'},

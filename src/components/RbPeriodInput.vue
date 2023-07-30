@@ -34,7 +34,6 @@
 
 <script>
     import RbPeriodSelectionModalFrame from "./RbPeriodSelectionModalFrame";
-    import {dateFormat} from "vue-filter-date-format";
     import {UtDate} from "../utils/UtDate";
     import typeOf from 'typeof';
     import {i18n, tbv} from "@/i18n";
@@ -95,12 +94,12 @@
 
                 if (dtStart || dtEnd) {
                     if (dtStart == dtEnd) {
-                        return dateFormat(dtStart, 'DD.MM.YYYY');
+                        return dtStart;
                     } else {
-                        let val = dtStart ? dateFormat(dtStart, 'DD.MM.YYYY') : '';
+                        let val = dtStart ? dtStart : '';
 
                         if (dtEnd) {
-                            val += (val ? ' - ' : '') + dateFormat(dtEnd, 'DD.MM.YYYY');
+                            val += (val ? ' - ' : '');
                         }
 
                         return val;

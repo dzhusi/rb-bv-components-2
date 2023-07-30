@@ -1,5 +1,5 @@
 <template>
-  <div class="rb-typeahead-input rb-multi-typeahead-input" v-click-outside="onClickOutside">
+  <div class="rb-typeahead-input rb-multi-typeahead-input" >
     <div
       :class="[{ disabled }, showOptions ? 'active' : '', 'rb-typeahead-inner']"
       :data-text="joinedOptions"

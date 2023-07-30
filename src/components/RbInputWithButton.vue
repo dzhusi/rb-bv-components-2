@@ -6,7 +6,6 @@
         :placeholder="placeholder"
         :state="state"
         v-model="innerValue"
-        v-mask="mask"
         :masked="masked"
         :disabled="disabled"
         ref="input"
@@ -46,11 +45,9 @@
 </template>
 
 <script>
-import { mask } from 'vue-the-mask';
 
 export default {
   name: 'RbInputWithButton',
-  directives: { mask },
   props: {
     placeholder: String,
     state: { type: Boolean, default: null },

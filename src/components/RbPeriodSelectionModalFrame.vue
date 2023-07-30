@@ -20,7 +20,6 @@
                                         type="text"
                                         autocomplete="off"
                                         @input="inputChangeDtStart"
-                                        v-mask="mask"
                                         debounce="300"
                                         class="rb-date-input"
                                         :placeholder="placeholder">
@@ -41,7 +40,6 @@
                                         type="text"
                                         autocomplete="off"
                                         @input="inputChangeDtEnd"
-                                        v-mask="mask"
                                         debounce="300"
                                         class="rb-date-input"
                                         :placeholder="placeholder">
@@ -62,12 +60,9 @@
 
 <script>
     import Vue from 'vue';
-    import {dateFormat} from "vue-filter-date-format";
-    import {mask} from 'vue-the-mask';
 
     export default {
         name: 'RbPeriodSelectionModalFrame',
-        directives: {mask},
         props: {
             id: String,
             dtStart: Date,
@@ -131,7 +126,7 @@
                 }
             },
             dateToStr(date) {
-                return dateFormat(new Date(date), this.inputPattern);
+                return '';
             },
             withoutTime(dateTime) {
                 let date = new Date(dateTime.getTime());
